@@ -34,6 +34,8 @@ public class DBConfiguration {
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
   
+  
+  
 	@Bean
 	public DataSource getDataSource() {
 	    BasicDataSource dataSource = new BasicDataSource();
