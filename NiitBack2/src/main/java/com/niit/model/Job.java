@@ -1,25 +1,23 @@
 package com.niit.model;
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Job_200")
 public class Job {
-	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)	
-	@Column(name="job_id")
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
 private String jobTitle;
 private String jobDescription;
 private String skillsRequired;
 private String location;
-private String yearsofExperience;
+private String yrsOfExp;
+private String companyName;
 private String salary;
-private Date postedon;
 public int getId() {
 	return id;
 }
@@ -50,11 +48,17 @@ public String getLocation() {
 public void setLocation(String location) {
 	this.location = location;
 }
-public String getYearsofExperience() {
-	return yearsofExperience;
+public String getYrsOfExp() {
+	return yrsOfExp;
 }
-public void setYearsofExperience(String yearsofExperience) {
-	this.yearsofExperience = yearsofExperience;
+public void setYrsOfExp(String yrsOfExp) {
+	this.yrsOfExp = yrsOfExp;
+}
+public String getCompanyName() {
+	return companyName;
+}
+public void setCompanyName(String companyName) {
+	this.companyName = companyName;
 }
 public String getSalary() {
 	return salary;
@@ -62,14 +66,6 @@ public String getSalary() {
 public void setSalary(String salary) {
 	this.salary = salary;
 }
-public Date getPostedon() {
-	return postedon;
-}
-public void setPostedon(Date postedon) {
-	this.postedon = postedon;
-}
 
-	
-	
-	
+
 }
