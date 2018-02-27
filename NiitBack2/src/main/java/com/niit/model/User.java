@@ -1,58 +1,37 @@
 package com.niit.model;
 import java.io.Serializable;
-import java.util.Date;
 
-import javax.persistence.*;
-
-import org.springframework.stereotype.Component;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="C_USERS")
-@Component
-
-public class User implements Serializable{
-
+@Table(name="USER_DETAILS")
+public class User implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
-
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+    @GeneratedValue(strategy=GenerationType.AUTO)	
+	@Column(name="user_id")
+    private int id;
 	private String firstname;
 	private String lastname;
-    private String username;
 	private String email;
 	private String password;
-	private String gender;
+	private String phonenumber;
 	private String role;
-	@Column(name="on_line")
+	@Column(name="online_status")
+	
 	private boolean online;
-	private boolean enabled;
-	private String mobile;
-	private Date dob;
-	private String address;
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getFirstname() {
-		return firstname;
-	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
 	}
 	public String getEmail() {
 		return email;
@@ -66,11 +45,23 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getGender() {
-		return gender;
+	public String getFirstname() {
+		return firstname;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 	public String getRole() {
 		return role;
@@ -78,38 +69,15 @@ public class User implements Serializable{
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public boolean isOnline() {
+	public boolean getOnline() {
 		return online;
 	}
 	public void setOnline(boolean online) {
 		this.online = online;
 	}
-	public boolean isEnabled() {
-		return enabled;
-	}
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-	public String getMobile() {
-		return mobile;
-	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-	public Date getDob() {
-		return dob;
-	}
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
+	
+	
+	
 
 }
